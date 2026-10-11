@@ -1,6 +1,6 @@
 # SONATA
 
-**Live demo:**https://sonata-swart.vercel.app/
+**Live demo:** https://sonata-swart.vercel.app/
 
 **The competitive league for musicians.** Sign in, pick up your instrument, and play the season's piece into your mic. SONATA listens, scores every note as you play it, and puts you on the path from Beginner to the global ranking.
 
