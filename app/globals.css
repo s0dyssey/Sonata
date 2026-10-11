@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+/*
+ * Theme tokens. Flat colors only: there are no gradients anywhere on the site
+ * except inside the purple logo mark on the home and base pages.
+ *
+ * Every component reads colors through these variables, so wrapping any
+ * subtree in data-theme="home", "classical" or "contemporary" re-themes it.
+ * The base set (logo purple) is the default on :root; /leaderboard, /login
+ * and /account use it.
+ *
+ *   brand / brand-strong / brand-bright   the logo's purples; same on every page (nav links)
+ *   logo-from / logo-to      the nav logo's two colors; the same value twice makes it flat
+ *   bg / surface / line      page background, cards and inputs, hairlines
+ *   tint                     off-white wash for a whole section, and for small pills
+ *   ink / muted              primary and secondary text
+ *   accent / accent-strong   links, eyebrow labels, small accent text (+ hover)
+ *   on-accent                text on accent
+ *   button / button-hover    primary button fill (+ hover)
+ *   on-button                text on primary buttons
+ *   rule                     accent bars and borders, large numerals
+ *   live / on-live           live-match badge and its text
+ *   deep / on-deep / deep-muted / deep-accent   dark panels (footer)
+ */
+
+:root {
+  /* Sampled from the logo. --brand is its darker purple. */
+  --brand: #2f1164;
+  --brand-strong: #1f0b45;
+  --brand-bright: #7a2382;
+  --off-white: #f8f5f0;
+  --off-white-deep: #f1ede6;
+
+  --nav-h: 72px;
+}
+
+/* Role tokens that follow the accent unless a theme sets its own. Declared on
+   every themed element so they resolve against that element's accent. */
+:root,
+[data-theme] {
+  --button: var(--accent);
+  --button-hover: var(--accent-strong);
+  --on-button: var(--on-accent);
+  --rule: var(--accent);
+  --live: var(--accent);
+  --on-live: var(--on-accent);
+}
+
+/* Base and home: off-white with the logo's purples. */
+:root,
+[data-theme="base"],
+[data-theme="home"] {
+  --bg: var(--off-white);
+  --surface: #ffffff;
+  --tint: var(--off-white-deep);
+  --line: #e6e1d8;
+  --ink: #1a1228;
+  --muted: #5d556b;
+  --accent: var(--brand);
+  --accent-strong: var(--brand-strong);
+  --on-accent: #ffffff;
+  --rule: var(--brand-bright);
+  --live: var(--brand-bright);
+  --deep: #1c0c36;
+  --on-deep: #ffffff;
+  --deep-muted: #b9aecb;
+  --deep-accent: #dcbde2;
+
+  /* The logo's own purples, brighter at the top right. */
+  --logo-from: var(--brand-bright);
+  --logo-to: var(--brand);
+}
+
+/* Home only: each section gets its own shade of white or off-white, and the
+   hero sits over its photo. */
+[data-theme="home"] {
+  --section-how: var(--off-white);
+  --section-stages: #ffffff;
+  --section-matches: var(--off-white-deep);
+
+  --hero-ink: #fbf8f3;
+  --hero-bg: #150b26;
+  --hero-overlay: rgb(21 11 38 / 0.68);
+}
+
+/* Classical: white, with rouge and cherry mahogany. */
+[data-theme="classical"] {
+  --rouge: #a3283f;
+  --rouge-strong: #841f33;
+  --cherry-mahogany: #4a1417;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --tint: var(--off-white);
+  --line: #ecd9d7;
+  --ink: var(--cherry-mahogany);
+  --muted: #6f5a58;
+  --accent: var(--rouge);
+  --accent-strong: var(--rouge-strong);
+  --on-accent: #ffffff;
+  --deep: var(--cherry-mahogany);
+  --on-deep: #fff6f3;
+  --deep-muted: #d9b9b4;
+  --deep-accent: #f0b6bd;
+
+  --logo-from: var(--rouge);
+  --logo-to: var(--rouge);
+}
+
+/* Contemporary: white, with baby blue and navy. */
+[data-theme="contemporary"] {
+  --baby-blue: #89cff0;
+  --baby-blue-strong: #6cc0ea;
+  --navy: #0c1b40;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --tint: #f5f7f9; /* cool off-white */
+  --line: #cfe3f1;
+  --ink: var(--navy);
+  --muted: #55647f;
+  --accent: #1b3a80; /* navy, a step lighter for small accent text */
+  --accent-strong: var(--navy);
+  --on-accent: #ffffff;
+  --button: var(--baby-blue);
+  --button-hover: var(--baby-blue-strong);
+  --on-button: var(--navy);
+  --rule: var(--baby-blue);
+  --live: var(--baby-blue);
+  --on-live: var(--navy);
+  --deep: var(--navy);
+  --on-deep: #f1f8fe;
+  --deep-muted: #a9bbd6;
+  --deep-accent: var(--baby-blue);
+
+  --logo-from: var(--accent);
+  --logo-to: var(--accent);
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-bright: var(--brand-bright);
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-tint: var(--tint);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-on-accent: var(--on-accent);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-on-button: var(--on-button);
+  --color-rule: var(--rule);
+  --color-live: var(--live);
+  --color-on-live: var(--on-live);
+  --color-deep: var(--deep);
+  --color-on-deep: var(--on-deep);
+  --color-deep-muted: var(--deep-muted);
+  --color-deep-accent: var(--deep-accent);
+
+  --color-section-how: var(--section-how);
+  --color-section-stages: var(--section-stages);
+  --color-section-matches: var(--section-matches);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-bg: var(--hero-bg);
+  --color-hero-overlay: var(--hero-overlay);
+
+  /* Three typefaces, loaded in app/layout.tsx. Their uses are set out under
+     "Type" further down. */
+  --font-sans: var(--type-body);
+  --font-display: var(--type-display);
+  --font-label: var(--type-label);
+}
+
+/*
+ * Type.
+ *
+ *   PT Sans Narrow      paragraphs and everything not listed below (font-sans, the default)
+ *   Jost                headings, and big numbers such as scores (font-display)
+ *   Plus Jakarta Sans   nav links and the small capital labels: "Season points",
+ *                       "Instrument level", eyebrows, button text (font-label)
+ *
+ * Headings and capital labels pick up their typeface automatically from the
+ * two rules below, so new ones need no extra class. Add font-display or
+ * font-label by hand only where a rule doesn't reach, such as a big number
+ * that isn't a heading.
+ */
+:root {
+  --type-body: var(--font-pt-sans-narrow), "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
+  --type-display: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --type-label: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  /* Anything set in capitals is a label. */
+  .uppercase {
+    font-family: var(--type-label);
+  }
+
+  /* Headings stay in Jost, capitals or not. */
+  h1,
+  h2,
+  h3,
+  :is(h1, h2, h3).uppercase {
+    font-family: var(--type-display);
+  }
+}
+
+html {
+  color-scheme: light;
+  /* Keep in-page anchors clear of the sticky nav. */
+  scroll-padding-top: var(--nav-h);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
