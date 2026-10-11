@@ -4,15 +4,13 @@
 
 **The competitive league for musicians.** Sign in, pick up your instrument, and play the season's piece into your mic. SONATA listens, scores every note as you play it, and puts you on the path from Beginner to the global ranking.
 
-Hacklanta 2026 · built in 2 days.
-
 ## What it is
 
 SONATA is a **virtual league for instrumentalists**. Players join one of two stages, **Classical** or **Contemporary**, play a set piece live, and are **scored note by note** on pitch while they play. No studio and no audition: if you can play it, you can compete.
 
 ## Why it exists
 
-Athletes and gamers have leagues, ladders and seasons. Musicians mostly practice alone, with nothing to measure against and nobody to play for. SONATA gives practice **a score, a rank and an opponent**, using nothing more than the mic already in your laptop.
+It exists for the musicians who want to hone their skills with people around the world in a fun, heavily competitive environment. It exists for the people who want to dust off their instruments and get back to playing music after their time in school. Athletes and gamers have leagues, ladders and seasons. Musicians mostly practice alone, with nothing to measure against and nobody to play for. SONATA gives practice **a score, a rank and an opponent**, using nothing more than the mic already in your laptop.  
 
 ## How it works
 
